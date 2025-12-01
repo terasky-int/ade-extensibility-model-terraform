@@ -12,6 +12,9 @@ ARG IMAGE_VERSION
 # Metadata as defined at http://label-schema.org
 ARG BUILD_DATE
 
+# install git (need to run models - including Azure Verified Modules)
+RUN tdnf install -y git
+
 # install terraform
 RUN wget -O terraform.zip https://releases.hashicorp.com/terraform/1.15.0-alpha20251119/terraform_1.15.0-alpha20251119_linux_amd64.zip
 RUN unzip terraform.zip && rm terraform.zip
